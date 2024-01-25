@@ -1,0 +1,59 @@
+User create Employee 
+    - update permissions if owner or Employee
+
+ employees
+   - if
+      owner can make Restaurant, update details and delete
+   - else 
+      - allow to make order and payment verification
+
+Restaurant(each will be new ):
+    - Have Menu
+    - Uder Menu have Item
+    - Item have contiti and price 
+    - employees and ower can allow to make order and payment
+
+# APi making and access with permission
+
+# DataBase
+
+  User
+    - first name
+    - last name
+    - image
+    - bio
+    - permission
+
+    employees
+    - name
+    - role
+
+    Restaurant
+    - restaurant_name
+    - details
+
+    Menu
+    - name( breakfast,lunch,dinner,snaks)
+
+    items
+    - item_name
+    - item_cout
+    - item_price
+    - item_availablity
+
+
+    Payment
+    - 
+
+    Order 
+    - Item 
+    - role define(ower or employees)
+    - quantity
+    - price 
+    - total price 
+
+
+
+navbar color: #BAE6FD
+button bg: yellow
+button hober: #0369A1

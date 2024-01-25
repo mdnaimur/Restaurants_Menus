@@ -1,0 +1,130 @@
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #BAE6FD;
+    --primary-two-color: #4891ff;
+    --light-color: #f4f4f6;
+    --dark-color: #111;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background: #fff;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container-sm {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/*
+#########
+navbar 
+#######
+*/
+.navbar {
+    background: var(--primary-color);
+    padding: 20px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .container .logo {
+    max-width: 75px;
+    max-height: 75px;
+}
+
+.navbar .main-menu ul {
+    display: flex;
+}
+
+.navbar .main-menu ul li a {
+    display: block;
+    padding: 10px 20px;
+    transition: 0.5s;
+    font-weight: 700;
+    color: #050505;
+}
+
+.navbar .main-menu ul li a:hover {
+    background: yellow;
+    color: #0369A1;
+}
+
+/*
+#########
+Registraion form 
+#######
+*/
+
+
+.heading,
+form {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.heading {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.5s;
+}

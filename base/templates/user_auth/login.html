@@ -1,0 +1,35 @@
+{% extends "common/main.html" %}
+{% load static %}
+
+
+
+{% block title %}
+User Login
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="heading">
+        <h3> Restaurants - User Login</h3>
+        <hr>
+    </div>
+
+    <div class="regi-form">
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <label for="username">Username:</label>
+            <input type="username" name="username" id="">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="">
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock content %}
