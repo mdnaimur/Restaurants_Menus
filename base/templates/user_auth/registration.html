@@ -1,0 +1,35 @@
+{% extends "common/main.html" %}
+{% load static %}
+
+
+
+{% block title %}
+User Registration
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="heading">
+        <h3> Restaurants - User Registration</h3>
+        <hr>
+    </div>
+
+    <div class="regi-form">
+        <form action="" method="post">
+            {% csrf_token %}
+
+            {% for field in form %}
+            {{ field.label_tag }}
+            {{ field }}
+            {% endfor %}
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock content %}
