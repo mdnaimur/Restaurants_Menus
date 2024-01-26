@@ -1,0 +1,39 @@
+{% extends "common/main.html" %}
+
+{% load static %}
+
+{% block title %} Profile - {{employees}} {% endblock title %}
+
+
+{% block content %}
+
+
+<div class="container">
+    <h2> View Profile</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Bio</th>
+                <th>User Role</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example row, replace the content with your actual data -->
+            <tr>
+                <td><img src="{{ employees.image.url }}" alt="User Image"></td>
+                <td>{{employees}}</td>
+                <td>{{employees.bio}}</td>
+                <td>{{employees.user_role}}</td>
+                <td class="edit"><a href="{% url 'editprofile' employees.id %}">Edit</a></td>
+                <td class="delete"><a href="{% url 'deleteprofile' employees.id  %}">Delete</a></td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

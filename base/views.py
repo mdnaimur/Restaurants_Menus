@@ -7,12 +7,22 @@ from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views import View
 
+from .forms import EmployeesProfile
 from .forms import EmployeesRegistrationFrom
+from .models import Employees
 
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+
+    try:
+        if request.user.is_authenticated:
+           employees = Employees.objects.get(user=request.user)
+    except:
+         messages.error(request,'User not Exist. Please communicate admin!!.')
+
+       # messages.warning(request,'User not Exist. Please communicate admin!!')
+    return render(request,'index.html',locals())
 
 
 # User Registraion
@@ -60,3 +70,64 @@ def UserLogOut(request):
     logout(request)
     messages.warning(request,"Logged Out !!!\n Login again")
     return redirect('login')
+
+# Employee Profile View 
+class EmployeeProfileView(View):
+    
+    def get(self,request):
+        form = EmployeesProfile()
+        return render(request,'EmployeeProfile/profile.html',locals())
+    
+    def post(self,request):
+        form = EmployeesProfile(request.POST,request.FILES)
+        #name = form.cleaned_data['name']
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = request.user
+            profile.save()
+
+            messages.success(request,'Profile Update Successefully')
+            return redirect('index')
+        else:
+            messages.warning(request,'Invalid Input Date')
+        return render(request,'EmployeeProfile/profile.html',locals())  
+    
+
+# Employee view list 
+class ProfileView(View):
+    def get(self,request):
+        employees = Employees.objects.get(user=request.user)
+        return render(request,'EmployeeProfile/profile_view.html',locals())
+
+# Employee edit 
+def profileEdit(request,pk):
+    employees = Employees.objects.get(pk=pk)
+    form = EmployeesProfile(instance=employees)
+    if request.method == 'POST':
+        form = EmployeesProfile(request.POST,request.FILES,instance=employees)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Profile Updated!!')
+        return redirect('viewprofile')
+    return render(request,'EmployeeProfile/profile.html',locals())
+
+# Employee Delete
+def profileDelete(request,id):
+    employees = Employees.objects.get(pk=id)
+    if request.method == 'POST':
+       employees.delete()
+       messages.error(request,'Profile Deleted!!')
+       return redirect('index')
+    return render(request,'EmployeeProfile/profile.html',locals())
+# Member add
+
+#Member Edit
+#Member Delete
+    
+#Menu Add
+
+#Item add edit delete
+
+#Order List
+    
+# Payment List

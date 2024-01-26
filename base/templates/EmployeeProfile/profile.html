@@ -1,0 +1,35 @@
+{% extends "common/main.html" %}
+{% load static %}
+
+
+
+{% block title %}
+Profile Update
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="heading">
+        <h3> Restaurants - User Profile</h3>
+        <hr>
+    </div>
+
+    <div class="regi-form">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {% for field in form %}
+            {{ field.label_tag }}
+            {{ field }}
+            {% endfor %}
+
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock content %}

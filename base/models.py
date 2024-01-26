@@ -12,7 +12,7 @@ class Employees(models.Model):
     email = models.EmailField(unique=True,null=True)
     bio = models.TextField(null=True)
     user_role = models.CharField(choices=USER_ROLE,max_length=12,default=None)
-    image = models.ImageField(null=True,default="avatar.svg")
+    image = models.ImageField(null=True,default="avatar.svg",upload_to='emp_pic')
     def __str__(self):
         return self.name
     
