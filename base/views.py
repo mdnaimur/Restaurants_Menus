@@ -119,6 +119,8 @@ def profileDelete(request,id):
        messages.error(request,'Profile Deleted!!')
        return redirect('index')
     return render(request,'EmployeeProfile/profile.html',locals())
+
+
 # Member add
 
 #Member Edit

@@ -16,8 +16,12 @@
     <div class="grid">
         <div class="profile grid-item">
             Welcome <h3>{{employees}} </h3>
-            Username: {{user}} <b> <a href="{% url 'profile'  %}">Update User</a> ||<a
-                    href="{% url 'viewprofile'  %}">View Profile</a> </b>
+            Username: {{user}} <b> <a href="{% url 'profile'  %}">Update User</a> ||
+
+                {% if employees %}
+                <a href="{% url 'viewprofile'  %}">View Profile</a> </b>
+            {% endif %}
+
             <hr>
             <h4> User Role : {{employees.user_role}}</h4>
         </div>
