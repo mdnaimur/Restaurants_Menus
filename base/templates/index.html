@@ -6,5 +6,33 @@
 
 {% block content %}
 
-<h1> Restaurants</h1>
+
+
+{% if request.user.is_authenticated %}
+
+<div class="container">
+    <h1> Restaurants-Menus Management </h1>
+    <img src="{{ employees.image.url }}" alt="picture" width="300px" height="300px">
+    <div class="grid">
+        <div class="profile grid-item">
+            Welcome <h3>{{employees}} </h3>
+            Username: {{user}} <b> <a href="{% url 'profile'  %}">Update User</a> ||<a
+                    href="{% url 'viewprofile'  %}">View Profile</a> </b>
+            <hr>
+            <h4> User Role : {{employees.user_role}}</h4>
+        </div>
+
+
+        <div class="employee grid-item">
+            <h3> Employees List</h3>
+        </div>
+        <div class="rastauratant grid-item">
+            <h2>Restaurants List</h2>
+            <a href="">View Restaurants</a>
+        </div>
+    </div>
+
+</div>
+{% endif %}
+
 {% endblock content %}

@@ -128,3 +128,79 @@ input[type="submit"] {
     border-radius: 4px;
     transition: 0.5s;
 }
+
+.warning {
+    background: yellow;
+    color: #050529;
+    padding: 10px;
+}
+
+.success {
+    background: green;
+    color: #BAE6FD;
+}
+
+.error {
+    background: red;
+    color: #fff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: var(--dark-color);
+    color: #fff;
+    padding: 10px;
+}
+
+.grid a {
+    color: #fff;
+}
+
+.grid-item {
+    background-color: rgba(5, 7, 4, 0.8);
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Table desing */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+img {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+}
+
+.edit,
+.delete {
+    text-align: center;
+}
+
+.edit a,
+.delete a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.edit a:hover,
+.delete a:hover {
+    text-decoration: underline;
+}
